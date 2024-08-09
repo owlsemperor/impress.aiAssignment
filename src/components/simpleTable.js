@@ -1,25 +1,23 @@
-import { React } from "react";
+import React from 'react'
 
 const SimpleTable = ({ dataSource }) => {
   return (
-    <div>
+    <div style={{ marginTop: '20px' }}>
       {dataSource.length ? (
-        <>
-          {dataSource.map((item, index) => {
-            return (
-              <div key={index}>
-                <div>Id: {item.id}</div>
-                <div>Name: {item.name}</div>
-                <div>Email: {item.email}</div>
-              </div>
-            );
-          })}
-        </>
+        <div>
+          {dataSource.map((item, index) => (
+            <div key={index} style={{ marginBottom: '10px' }}>
+              <div>Id: {item.id}</div>
+              <div>Name: {item.name}</div>
+              <div>Email: {item.email}</div>
+            </div>
+          ))}
+        </div>
       ) : (
-        "No user data"
+        <p>No user data</p>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default SimpleTable;
+export default SimpleTable

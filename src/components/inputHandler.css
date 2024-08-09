@@ -1,0 +1,31 @@
+.input-container {
+  margin: 5px;
+}
+
+.input-group {
+  margin-bottom: 5px;
+}
+
+input,
+button {
+  display: block;
+  width: 10%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+.error {
+  color: rgb(158, 152, 23);
+  font-size: 30px;
+  margin-top: 20px;
+}
