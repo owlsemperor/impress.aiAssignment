@@ -1,22 +1,17 @@
-.input-container {
-  margin: 5px;
-}
-
-.input-group {
-  margin-bottom: 5px;
-}
-
 input,
 button {
   display: block;
-  width: 10%;
+  width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
 
+input {
+  margin-bottom: 10px;
+}
+
 button {
   margin-top: 15px;
-  padding: 10px;
   cursor: pointer;
 }
 
@@ -24,8 +19,42 @@ label {
   display: block;
   margin-bottom: 5px;
 }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.input-field {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 300px;
+}
+
 .error {
-  color: rgb(158, 152, 23);
-  font-size: 30px;
+  color: red;
+  font-size: 12px;
   margin-top: 20px;
+}
+
+.input-group {
+  margin-bottom: 5px;
+}
+
+.input-container .input-field,
+.input-container .submit-button {
+  margin-bottom: 10px;
+}
+
+.input-container .input-field {
+  width: 300px;
+}
+
+.input-container .submit-button {
+  width: 300px;
 }

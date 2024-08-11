@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import './inputHandler.css'
+import { Button, Input } from 'antd'
+import 'antd/dist/antd.css'
+
+import './inputHandler.css' // Custom styles
 
 const InputHandler = ({ onSubmit, editMode = false }) => {
   const [name, setName] = useState('')
@@ -7,7 +10,7 @@ const InputHandler = ({ onSubmit, editMode = false }) => {
   const [errors, setErrors] = useState({ name: '', email: '' })
 
   const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ //this validate email part is copied
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(email)
   }
 
@@ -15,7 +18,7 @@ const InputHandler = ({ onSubmit, editMode = false }) => {
     e.preventDefault()
     let validationErrors = {}
     if (!name) {
-      validationErrors.name = 'Name cannoyt be empty'
+      validationErrors.name = 'Name cannot be empty'
     }
     if (!email) {
       validationErrors.email = 'Email cannot be empty'
@@ -28,7 +31,6 @@ const InputHandler = ({ onSubmit, editMode = false }) => {
       return
     }
 
-    // Clear errors and submit
     setErrors({})
     onSubmit({ name, email })
     setName('')
@@ -37,28 +39,26 @@ const InputHandler = ({ onSubmit, editMode = false }) => {
 
   return (
     <div className='input-container'>
-      <div>
-        <input
-          type='text'
+      <div className='input-field'>
+        <Input
           placeholder='Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         {errors.name && <span className='error'>{errors.name}</span>}
       </div>
-      <div>
-        <input
-          type='email'
+      <div className='input-field'>
+        <Input
           placeholder='Email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         {errors.email && <span className='error'>{errors.email}</span>}
       </div>
-      <div>
-        <button onClick={handleSubmit}>
+      <div className='submit-button'>
+        <Button type='primary' onClick={handleSubmit} block>
           {editMode ? 'Edit user' : 'Add user'}
-        </button>
+        </Button>
       </div>
     </div>
   )

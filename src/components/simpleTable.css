@@ -1,17 +1,33 @@
-table {
-  width: 100%;
-  border-collapse: collapse;
+.table-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.custom-table .ant-table {
+  border: none;
+  border-radius: 4px;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  text-align: center;
+}
+
+.no-data {
+  text-align: center;
+  color: #999;
   margin-top: 20px;
+  font-size: 14px;
 }
 
-table,
-th,
-td {
-  border: 1px solid black;
-}
-
-th,
-td {
-  padding: 8px;
-  text-align: left;
+.button-container {
+  display: flex;
+  gap: 8px;
 }
