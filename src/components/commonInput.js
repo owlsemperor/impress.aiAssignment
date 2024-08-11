@@ -15,7 +15,7 @@ const InputHandler = ({ onSubmit, editMode = false }) => {
     e.preventDefault()
     let validationErrors = {}
     if (!name) {
-      validationErrors.name = 'Name cannot be empty'
+      validationErrors.name = 'Name cannoyt be empty'
     }
     if (!email) {
       validationErrors.email = 'Email cannot be empty'
